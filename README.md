@@ -33,6 +33,14 @@ A modern drag-and-drop website builder application that allows users to create w
 - Node.js (v14 or higher)
 - npm or yarn
 
+### Production Deployment
+
+The application is configured to work with production deployments. See [DEPLOYMENT.md](DEPLOYMENT.md) for deployment instructions.
+
+**Current Production URL**: https://builder-eight-puce.vercel.app/
+
+For environment variable setup, see [ENV_SETUP.md](ENV_SETUP.md).
+
 ### Installation
 
 1. Install root dependencies:

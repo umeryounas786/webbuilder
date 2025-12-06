@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../config/api';
 import ComponentPalette from './ComponentPalette';
 import Canvas from './Canvas';
 import PropertiesPanel from './PropertiesPanel';

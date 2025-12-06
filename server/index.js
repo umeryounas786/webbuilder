@@ -12,7 +12,15 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://builder-eight-puce.vercel.app',
+    process.env.FRONTEND_URL
+  ].filter(Boolean),
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
