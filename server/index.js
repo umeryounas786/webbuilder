@@ -17,6 +17,7 @@ const corsOptions = {
     'http://localhost:3000',
     'https://builder-eight-puce.vercel.app',
     'https://webbuilder-six.vercel.app',
+    'https://webbuilder-47ad.vercel.app',
     process.env.FRONTEND_URL,
     process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null
   ].filter(Boolean),
