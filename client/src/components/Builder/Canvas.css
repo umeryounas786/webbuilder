@@ -1,0 +1,67 @@
+.canvas {
+  flex: 1;
+  background: #f0f0f0;
+  overflow-y: auto;
+  position: relative;
+  padding: 2rem;
+}
+
+.canvas.drag-over {
+  background: #e8e8ff;
+}
+
+.canvas-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.canvas-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #999;
+  text-align: center;
+  padding: 3rem;
+}
+
+.canvas-empty p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.quick-add {
+  margin-top: 2rem;
+}
+
+.quick-add h4 {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.quick-add-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.quick-add-btn {
+  padding: 0.5rem 1rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.quick-add-btn:hover {
+  opacity: 0.9;
+}
