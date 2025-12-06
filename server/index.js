@@ -16,6 +16,7 @@ const corsOptions = {
   origin: [
     'http://localhost:3000',
     'https://builder-eight-puce.vercel.app',
+    'https://webbuilder-six.vercel.app',
     process.env.FRONTEND_URL
   ].filter(Boolean),
   credentials: true
@@ -272,9 +273,15 @@ app.delete('/api/projects/:id', authenticateToken, async (req, res) => {
   }
 });
 
-// Initialize server
-ensureDataDir().then(() => {
+// Initialize data directory
+ensureDataDir();
+
+// Export app for Vercel serverless functions
+module.exports = app;
+
+// Only start server if running directly (not as serverless function)
+if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
-});
+}
