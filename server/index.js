@@ -17,7 +17,8 @@ const corsOptions = {
     'http://localhost:3000',
     'https://builder-eight-puce.vercel.app',
     'https://webbuilder-six.vercel.app',
-    process.env.FRONTEND_URL
+    process.env.FRONTEND_URL,
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null
   ].filter(Boolean),
   credentials: true
 };
@@ -26,7 +27,11 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Data storage paths
-const DATA_DIR = path.join(__dirname, 'data');
+// In Vercel serverless, use /tmp for writable storage (but note: not persistent!)
+// For production, you should use a database instead
+const DATA_DIR = process.env.VERCEL 
+  ? path.join('/tmp', 'data')  // Vercel serverless - use /tmp (ephemeral)
+  : path.join(__dirname, 'data');  // Local development - use server/data
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const PROJECTS_FILE = path.join(DATA_DIR, 'projects.json');
 
